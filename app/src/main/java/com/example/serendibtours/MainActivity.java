@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                TourDataModelClass tourDataModelClass = tourDataModelClassList.get(position);
+               final TourDataModelClass tourDataModelClass = tourDataModelClassList.get(position);
 
                 //creating the prompt dialog box
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -70,7 +70,9 @@ public class MainActivity extends AppCompatActivity {
                 builder.setNeutralButton("Update", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                            startActivity(new Intent(context,UpdateTourData.class));
+                            Intent intent = new Intent(context,UpdateTourData.class);
+                            intent.putExtra("dest_Id",String.valueOf(tourDataModelClass.getDestId()));
+                            startActivity(intent);
                     }
                 });
                 builder.show();
