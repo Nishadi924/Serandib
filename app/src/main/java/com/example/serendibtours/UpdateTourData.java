@@ -43,6 +43,11 @@ public class UpdateTourData extends AppCompatActivity {
         updateIsAccommodationAvailable.setText(tourDataModelClass.getIsAccommodationAvailable());
         updateIsFoodAvailable.setText(tourDataModelClass.getIsFoodAvailable());
 
+        //calling the validate methods
+        if (!updateValidateLocation() | !updateValidatePackageNo() | !updateValidateTourGuideName() | !updateValidNoOfDaysPerTrip() | !updateValidIsAccommodationAvailable() | !updateValidIsFoodAvailable()){
+            return;
+        }
+
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,5 +65,88 @@ public class UpdateTourData extends AppCompatActivity {
                 startActivity(new Intent(context,MainActivity.class));
             }
         });
+    }
+
+    //validate function
+
+    //Validate Function
+
+    private boolean updateValidateLocation() {
+        String val = updateLocation.getText().toString().trim();
+        if (val.isEmpty()) {
+            updateLocation.setError("Field Cannot Be Empty!");
+            return false;
+        } else {
+            updateLocation.setError(null);
+            updateLocation.setEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean updateValidatePackageNo(){
+        String val= updatePackageNo.getText().toString().trim();
+        String checkSpaces = "\\A\\w{1,20}\\z";
+        if (val.isEmpty()){
+            updatePackageNo.setError("Field Cannot Be Empty!");
+            return false;
+        }else if(val.length()>20){
+            updatePackageNo.setError("Package No is too large!");
+            return false;
+        }else if(!val.matches(checkSpaces)){
+            updatePackageNo.setError("No White Spaces are Allow!");
+            return false;
+        } else {
+            updatePackageNo.setError(null);
+            updatePackageNo.setEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean updateValidateTourGuideName(){
+        String val=updateTourGuideName.getText().toString().trim();
+        if (val.isEmpty()){
+            updateTourGuideName.setError("Field Cannot Be Empty!");
+            return false;
+        }else {
+            updateTourGuideName.setError(null);
+            updateTourGuideName.setEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean updateValidNoOfDaysPerTrip(){
+        String val=updateNoOfDaysPerTrip.getText().toString().trim();
+        if (val.isEmpty()){
+            updateNoOfDaysPerTrip.setError("Field Cannot Be Empty!");
+            return false;
+        } else {
+            updateNoOfDaysPerTrip.setError(null);
+            updateNoOfDaysPerTrip.setEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean updateValidIsAccommodationAvailable(){
+        String val=updateIsAccommodationAvailable.getText().toString().trim();
+        if (val.isEmpty()){
+            updateIsAccommodationAvailable.setError("Field Cannot Be Empty!");
+            return false;
+        } else {
+            updateIsAccommodationAvailable.setError(null);
+            updateIsAccommodationAvailable.setEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean updateValidIsFoodAvailable(){
+        String val=updateIsFoodAvailable.getText().toString().trim();
+        if (val.isEmpty()){
+            updateIsFoodAvailable.setError("Field Cannot Be Empty!");
+            return false;
+        } else {
+            updateIsFoodAvailable.setError(null);
+            updateIsFoodAvailable.setEnabled(false);
+            return true;
+        }
     }
 }
