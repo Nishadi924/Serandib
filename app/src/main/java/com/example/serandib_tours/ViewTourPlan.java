@@ -34,7 +34,7 @@ public class ViewTourPlan extends AppCompatActivity {
         Intent intent = getIntent();
         TourPlan tourPlan = intent.getParcelableExtra("plan");
 
-        Toast.makeText(this,"selected" + tourPlan.getNoOfDays(),Toast.LENGTH_LONG).show();
+
 
         destination.setText(tourPlan.getDestination());
         addOntherPlace.setText(tourPlan.getOtherPlaces());
