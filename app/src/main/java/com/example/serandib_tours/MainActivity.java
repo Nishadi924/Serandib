@@ -24,10 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private NavigationView navigationView;
 
-    private DrawerLayout drawerLayout;
-    private ToggleButton toggle;
 
-    lateinit var toggle:ActionBarDrawerToggle;
+
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,10 +64,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //navigation drawer
-        toggle = ActionBarDrawerToggle(this, R.string.open,R.string.close);
-        navigationView.setNavigationItemSelectedListener();
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncsSate();
 
 
     }
