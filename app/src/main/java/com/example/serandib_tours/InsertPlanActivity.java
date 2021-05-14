@@ -32,7 +32,7 @@ public class InsertPlanActivity extends AppCompatActivity implements DatePickerD
         //buttons
         dateButton = findViewById(R.id.dateButton);
         saveButton = findViewById(R.id.saveButton);
-        addOtherPlaceButton = findViewById(R.id.addOtherPlaceButton);
+
 
         //editText
         editTextDestination = findViewById(R.id.editTextDestination);
