@@ -12,4 +12,6 @@
     <string name="insert_data">Insert Data</string>
     <string name="serendib_tours">Serendib Tours</string>
     <string name="update_data">Update Data</string>
+    <string name="add">Add</string>
+    <string name="insert_a_new_package">Insert a New Package</string>
 </resources>
