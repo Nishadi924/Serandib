@@ -3,4 +3,13 @@
     <string name="insert_data_into_the_tour_package">Insert Data into the Tour Package</string>
     <string name="destination_id">Destination Id</string>
     <string name="update_tour_destination_data">Update Tour Destination Data</string>
+    <string name="location">Location</string>
+    <string name="package_no">Package No</string>
+    <string name="tour_guide_name">Tour Guide Name</string>
+    <string name="no_of_days_per_trip">No of days per Trip</string>
+    <string name="is_accommodation_available">Is Accommodation Available</string>
+    <string name="is_food_available">Is Food Available</string>
+    <string name="insert_data">Insert Data</string>
+    <string name="serendib_tours">Serendib Tours</string>
+    <string name="update_data">Update Data</string>
 </resources>
