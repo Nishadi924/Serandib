@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Serandib_Tours</string>
+    <string name="title">Serandib Tours</string>
+    <string name="title_1">Tour Plans</string>
+    <string name="title_2">Accommodation</string>
+    <string name="title_3">Begin Tour</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+</resources>
