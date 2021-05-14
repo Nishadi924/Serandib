@@ -9,7 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-//retrieve the data frm url
+//retrieve the data from url
 public class DownladUrl {
 
     public String ReadTheUrl(String placeURL) throws IOException
@@ -30,6 +30,7 @@ public class DownladUrl {
 
             String line = "";
 
+            //Read each line one by one
             while ((line = bufferedReader.readLine()) != null) {
                 stringBuffer.append(line);
             }

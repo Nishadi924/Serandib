@@ -70,9 +70,10 @@ public class MapsActivity extends FragmentActivity implements
     }
     public void onClick(View v)
     {
-        String hotel="hotel", restaurant="restaurant";
+        //String hotel="hotel", restaurant="restaurant";
         Object transferData[]=new Object[2];
-        GetNearbyPlaces getNearbyPlaces=new GetNearbyPlaces();
+
+       GetNearbyPlaces getNearbyPlaces=new GetNearbyPlaces();
 
 
 
@@ -126,10 +127,13 @@ public class MapsActivity extends FragmentActivity implements
 
             case R.id.hotels_nearby:
                 mMap.clear();
+                //
+                String hotel="hotel";
                 String url= getUrl(latitide, longitude, hotel);
                 transferData[0]=mMap;
                 transferData[1]=url;
 
+                //newly added this line
                 getNearbyPlaces.execute(transferData);
                 Toast.makeText(this, "searching for near by hotels..", Toast.LENGTH_SHORT).show();
                 Toast.makeText(this, "showing near by hotels..", Toast.LENGTH_SHORT).show();
@@ -137,7 +141,9 @@ public class MapsActivity extends FragmentActivity implements
 
             case R.id.restaurants_nearby:
                 mMap.clear();
+                //
 
+                String restaurant="restaurant";
                 String url1= getUrl(latitide, longitude, restaurant);
                 transferData[0]=mMap;
                 transferData[1]=url1;
@@ -153,11 +159,11 @@ public class MapsActivity extends FragmentActivity implements
     {
         StringBuilder googleURL=new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googleURL.append("location="+latitide+"," +longitude);
-        googleURL.append("&radius="+ proximityRadius);
+        googleURL.append("&radius="+proximityRadius);
         googleURL.append("&type="+nearbyplace);
         googleURL.append("&sensor=true");
         //get Api key
-        googleURL.append("&key="+"AIzaSyDp9raKEiE_ogJNWKNGzxuUj3sMhlg8Djk");
+        googleURL.append("&key="+"AIzaSyAOLVTT5dGhmK9F5u0QOW42JSItMtaa2Os");
 
         Log.d("GoogleMapActivity","url="+googleURL.toString());
 
